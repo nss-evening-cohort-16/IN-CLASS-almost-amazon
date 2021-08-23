@@ -1,7 +1,7 @@
 import addBookForm from '../components/forms/addBookForm';
 
 const domEvents = () => {
-  document.querySelector('body').addEventListener('click', (e) => {
+  document.querySelector('#main-container').addEventListener('click', (e) => {
     // CLICK EVENT FOR DELETING A BOOK
     if (e.target.id.includes('delete-book')) {
       if (window.confirm('Want to delete?')) {
