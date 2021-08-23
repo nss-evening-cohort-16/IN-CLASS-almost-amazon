@@ -2,7 +2,7 @@ import firebase from 'firebase/app';
 import 'firebase/auth';
 import loginButton from '../components/buttons/loginButton';
 import startApp from '../views/startApp';
-import firebaseConfig from './auth/apiKeys';
+import firebaseConfig from '../../api/apiKeys';
 
 const checkLoginStatus = () => {
   // This line initializes your firebase app using the values from your .env file
