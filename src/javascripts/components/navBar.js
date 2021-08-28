@@ -1,20 +1,13 @@
 const navBar = () => {
   document.querySelector('#navigation').innerHTML = `
-    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark mb-4">
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark mb-5">
+    <div class="container-fluid">
         <a class="navbar-brand title" href="#">Almost Amazon</a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav mr-auto">
+        <div class="collapse navbar-collapse" id="navbarText">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item active">
               <a class="nav-link" href="#" id="all-books">
                 All Books <span class="sr-only">(current)</span>
@@ -38,11 +31,13 @@ const navBar = () => {
             />
             </li>
           </ul>
-          <div id="cart-button"></div>
-          <div id="logout-button"></div>
+          <span class="navbar-text">
+            <div id="cart-button"></div>
+            <div id="logout-button"></div>
+          </span>
         </div>
-      </nav>
-    `;
+        </div>
+      </nav>`;
 };
 
 export default navBar;
