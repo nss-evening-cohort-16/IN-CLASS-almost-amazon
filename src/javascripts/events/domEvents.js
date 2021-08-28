@@ -8,7 +8,12 @@ import {
 import { showBooks } from '../components/books';
 import addAuthorForm from '../components/forms/addAuthorForm';
 import { showAuthors } from '../components/authors';
-import { createAuthor, deleteAuthor } from '../helpers/data/authorData';
+import {
+  createAuthor,
+  deleteAuthor,
+  getSingleAuthor,
+  updateAuthor
+} from '../helpers/data/authorData';
 
 const domEvents = () => {
   document.querySelector('#main-container').addEventListener('click', (e) => {
@@ -93,6 +98,24 @@ const domEvents = () => {
       createAuthor(authorObject).then(showAuthors);
     }
     // ADD CLICK EVENT FOR EDITING AN AUTHOR
+    if (e.target.id.includes('update-author')) {
+      const [, id] = e.target.id.split('--');
+      getSingleAuthor(id).then(addAuthorForm);
+    }
+    // ADD CLICK EVENT FOR SUBMITTING EDITED AN AUTHOR
+    if (e.target.id.includes('edit-author')) {
+      e.preventDefault();
+      const [, firebaseKey] = e.target.id.split('--');
+
+      const authorObj = {
+        email: document.querySelector('#email').value,
+        first_name: document.querySelector('#first_name').value,
+        last_name: document.querySelector('#last_name').value,
+        firebaseKey
+      };
+
+      updateAuthor(authorObj).then(showAuthors);
+    }
   });
 };
 
