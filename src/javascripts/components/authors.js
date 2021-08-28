@@ -3,6 +3,7 @@ const showAuthors = (array) => {
   // CREATE A BUTTON TO ADD AUTHOR
   document.querySelector('#add-button').innerHTML = '<button class="btn btn-success btn-lg mb-4" id="add-author-btn">Add An Author</button>';
   document.querySelector('#form-container').innerHTML = '';
+  document.querySelector('#view').innerHTML = '';
 
   array.forEach((item) => {
     document.querySelector('#store').innerHTML += `
