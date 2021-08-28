@@ -1,5 +1,5 @@
 import addBookForm from '../components/forms/addBookForm';
-import { createBook } from '../helpers/data/bookData';
+import { createBook, deleteBook } from '../helpers/data/bookData';
 import { showBooks } from '../components/books';
 import addAuthorForm from '../components/forms/addAuthorForm';
 import { showAuthors } from '../components/authors';
@@ -11,7 +11,11 @@ const domEvents = () => {
     if (e.target.id.includes('delete-book')) {
       // eslint-disable-next-line no-alert
       if (window.confirm('Want to delete?')) {
-        console.warn('CLICKED DELETE BOOK', e.target.id);
+        // console.warn('CLICKED DELETE BOOK', e.target.id);
+        // console.warn(e.target.id.split('--'));
+        const [, id] = e.target.id.split('--');
+
+        deleteBook(id).then(showBooks);
       }
     }
 
