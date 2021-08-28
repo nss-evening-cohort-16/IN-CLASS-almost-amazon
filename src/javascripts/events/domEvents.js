@@ -8,7 +8,7 @@ import {
 import { showBooks } from '../components/books';
 import addAuthorForm from '../components/forms/addAuthorForm';
 import { showAuthors } from '../components/authors';
-import { createAuthor } from '../helpers/data/authorData';
+import { createAuthor, deleteAuthor } from '../helpers/data/authorData';
 
 const domEvents = () => {
   document.querySelector('#main-container').addEventListener('click', (e) => {
@@ -67,6 +67,15 @@ const domEvents = () => {
     }
 
     // ADD CLICK EVENT FOR DELETING AN AUTHOR
+    if (e.target.id.includes('delete-author')) {
+      // eslint-disable-next-line no-alert
+      if (window.confirm('Want to delete?')) {
+        const [, id] = e.target.id.split('--');
+
+        deleteAuthor(id).then(showAuthors);
+      }
+    }
+
     // ADD CLICK EVENT FOR SHOWING FORM FOR ADDING AN AUTHOR
     if (e.target.id.includes('add-author-btn')) {
       addAuthorForm();
