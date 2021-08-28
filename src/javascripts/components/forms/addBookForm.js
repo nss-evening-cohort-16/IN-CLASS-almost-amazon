@@ -4,7 +4,7 @@ const addBookForm = (obj = {}) => {
   document.querySelector('#store').innerHTML = '';
   document.querySelector('#add-button').innerHTML = '';
   document.querySelector('#form-container').innerHTML = `
-    <form id="submit-book-form" class="mb-4">
+    <form id="book-form" class="mb-4">
       <div class="form-group">
         <label for="title">Book Title</label>
         <input type="text" class="form-control" id="title" aria-describedby="bookTitle" placeholder="Enter Book Title" value="${obj.title || ''}" required>
