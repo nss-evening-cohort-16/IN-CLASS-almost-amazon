@@ -8,7 +8,13 @@ import {
 import { showBooks } from '../components/books';
 import addAuthorForm from '../components/forms/addAuthorForm';
 import { showAuthors } from '../components/authors';
-import { createAuthor } from '../helpers/data/authorData';
+import {
+  createAuthor,
+  deleteAuthor,
+  getSingleAuthor,
+  updateAuthor
+} from '../helpers/data/authorData';
+import viewBook from '../components/viewBook';
 
 const domEvents = () => {
   document.querySelector('#main-container').addEventListener('click', (e) => {
@@ -36,6 +42,7 @@ const domEvents = () => {
         title: document.querySelector('#title').value,
         image: document.querySelector('#image').value,
         price: document.querySelector('#price').value,
+        description: document.querySelector('#description').value,
         sale: document.querySelector('#sale').checked,
         author_id: document.querySelector('#author_id').value
       };
@@ -59,6 +66,7 @@ const domEvents = () => {
         image: document.querySelector('#image').value,
         price: document.querySelector('#price').value,
         sale: document.querySelector('#sale').checked,
+        description: document.querySelector('#description').value,
         author_id: document.querySelector('#author_id').value,
         firebaseKey
       };
@@ -66,7 +74,21 @@ const domEvents = () => {
       updateBook(bookObject).then(showBooks);
     }
 
+    if (e.target.id.includes('view-book-btn')) {
+      const [, firebaseKey] = e.target.id.split('--');
+      getSingleBook(firebaseKey).then(viewBook);
+    }
+
     // ADD CLICK EVENT FOR DELETING AN AUTHOR
+    if (e.target.id.includes('delete-author')) {
+      // eslint-disable-next-line no-alert
+      if (window.confirm('Want to delete?')) {
+        const [, id] = e.target.id.split('--');
+
+        deleteAuthor(id).then(showAuthors);
+      }
+    }
+
     // ADD CLICK EVENT FOR SHOWING FORM FOR ADDING AN AUTHOR
     if (e.target.id.includes('add-author-btn')) {
       addAuthorForm();
@@ -79,11 +101,31 @@ const domEvents = () => {
         email: document.querySelector('#email').value,
         first_name: document.querySelector('#first_name').value,
         last_name: document.querySelector('#last_name').value,
+        favorite: document.querySelector('#favorite').checked,
       };
 
       createAuthor(authorObject).then(showAuthors);
     }
     // ADD CLICK EVENT FOR EDITING AN AUTHOR
+    if (e.target.id.includes('update-author')) {
+      const [, id] = e.target.id.split('--');
+      getSingleAuthor(id).then(addAuthorForm);
+    }
+    // ADD CLICK EVENT FOR SUBMITTING EDITED AN AUTHOR
+    if (e.target.id.includes('edit-author')) {
+      e.preventDefault();
+      const [, firebaseKey] = e.target.id.split('--');
+
+      const authorObj = {
+        email: document.querySelector('#email').value,
+        first_name: document.querySelector('#first_name').value,
+        last_name: document.querySelector('#last_name').value,
+        favorite: document.querySelector('#favorite').checked,
+        firebaseKey
+      };
+
+      updateAuthor(authorObj).then(showAuthors);
+    }
   });
 };
 
