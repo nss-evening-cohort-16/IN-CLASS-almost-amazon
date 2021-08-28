@@ -1,6 +1,5 @@
 const viewBook = (obj) => {
   document.querySelector('#store').innerHTML = '';
-  // CREATE A BUTTON TO ADD AUTHOR
   document.querySelector('#add-button').innerHTML = '';
   document.querySelector('#form-container').innerHTML = '';
   document.querySelector('#view').innerHTML = '';
