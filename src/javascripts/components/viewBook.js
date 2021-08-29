@@ -15,7 +15,7 @@ const viewBook = (obj) => {
     </div>
     <div class="text-white ms-5 details">
       <h5>${obj.title} by ${obj.author_id}</h5>
-      <p>${obj.description || ''}</p>
+      <p class="description">${obj.description || ''}</p>
       <hr>
       <p>${obj.sale ? `<span class="badge badge-info sale-badge"><i class="fa fa-bell" aria-hidden="true"></i> Sale</span> $${obj.price}` : `$${obj.price}`}</p>      
     </div>
