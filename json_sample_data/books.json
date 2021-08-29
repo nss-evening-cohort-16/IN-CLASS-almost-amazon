@@ -70,5 +70,14 @@
     "price" : "14.99",
     "sale" : false,
     "title" : "A Dream So Dark"
+  },
+  "-MiBwAF5wOY00AYJm7cR": {
+    "author_id": "-MiBw4tCvNZd23yTVDQw",
+    "firebaseKey": "-MiBwAF5wOY00AYJm7cR",
+    "description" : "",
+    "image": "https://images-na.ssl-images-amazon.com/images/I/61GSqXVhhKL.jpg",
+    "price": "12.00",
+    "sale": false,
+    "title": "The Fire Next Time"
   }
 }
