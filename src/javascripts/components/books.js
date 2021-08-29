@@ -1,4 +1,5 @@
 const showBooks = (array) => {
+  // TODO: Write a function that clears out all the containers
   document.querySelector('#add-button').innerHTML = '<button class="btn btn-success btn-lg mb-4" id="add-book-btn">Add A Book</button>';
 
   document.querySelector('#store').innerHTML = '';
