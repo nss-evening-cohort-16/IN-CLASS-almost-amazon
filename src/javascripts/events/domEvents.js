@@ -15,6 +15,7 @@ import {
   updateAuthor
 } from '../helpers/data/authorData';
 import viewBook from '../components/viewBook';
+import viewBookDetails from '../helpers/data/mergedData';
 
 const domEvents = () => {
   document.querySelector('#main-container').addEventListener('click', (e) => {
@@ -76,7 +77,7 @@ const domEvents = () => {
 
     if (e.target.id.includes('view-book-btn')) {
       const [, firebaseKey] = e.target.id.split('--');
-      getSingleBook(firebaseKey).then(viewBook);
+      viewBookDetails(firebaseKey).then(viewBook);
     }
 
     // ADD CLICK EVENT FOR DELETING AN AUTHOR
