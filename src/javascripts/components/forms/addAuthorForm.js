@@ -1,6 +1,7 @@
 const addAuthorForm = () => {
   document.querySelector('#store').innerHTML = '';
   document.querySelector('#add-button').innerHTML = '';
+  document.querySelector('#view').innerHTML = '';
   document.querySelector('#form-container').innerHTML = `
     <form id="author-form" class="mb-4">
       <div class="form-group">
