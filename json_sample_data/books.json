@@ -4,6 +4,7 @@
     "firebaseKey": "-MiBsBKGWFEU-yluJkL-",
     "image": "https://images-na.ssl-images-amazon.com/images/I/91+NBrXG-PL.jpg",
     "price": "24.99",
+    "description": "",
     "sale": false,
     "title": "A Promised Land"
   },
@@ -12,6 +13,7 @@
     "firebaseKey": "-MiBsknNSQ6aBG1-2lQS",
     "image": "https://images-na.ssl-images-amazon.com/images/I/A1agLFsWkOL.jpg",
     "price": "12.99",
+    "description": "",
     "sale": true,
     "title": "Children of Blood and Bone"
   },
@@ -20,6 +22,7 @@
     "firebaseKey": "-MiBuCve4-r_H-RLUOh2",
     "image": "https://images-na.ssl-images-amazon.com/images/I/51529Lfc2ML.jpg",
     "price": "30.00",
+    "description": "",
     "sale": false,
     "title": "A People's History of the United States of America"
   },
@@ -28,6 +31,7 @@
     "firebaseKey": "-MiBuU13EaKmGOMjJF-X",
     "image": "https://images-na.ssl-images-amazon.com/images/I/81rRRmZZvZL.jpg",
     "price": "15.89",
+    "description": "",
     "sale": false,
     "title": "Concrete Rose"
   },
@@ -36,6 +40,7 @@
     "firebaseKey": "-MiBuqoYjFwbXyA8oiiw",
     "image": "https://images-na.ssl-images-amazon.com/images/I/A1Cu4ywUeyL.jpg",
     "price": "25.00",
+    "description": "",
     "sale": true,
     "title": "The Underground Railroad"
   },
@@ -44,6 +49,7 @@
     "firebaseKey": "-MiBvEFJTI3FmTzDu_3V",
     "image": "https://res.cloudinary.com/bloomsbury-atlas/image/upload/w_360,c_scale/jackets/9781526622402.jpg",
     "price": "12.99",
+    "description": "",
     "sale": true,
     "title": "Hood Feminism"
   },
@@ -52,6 +58,7 @@
     "firebaseKey": "-MiBvW8ME_DvO2GzwQ8D",
     "image": "https://images-na.ssl-images-amazon.com/images/I/81Uf1dTjfQL.jpg",
     "price": "15.00",
+    "description": "",
     "sale": false,
     "title": "A Blade So Black"
   },
@@ -60,6 +67,7 @@
     "firebaseKey": "-MiBvf3bIyooE6x4nLLB",
     "image": "https://m.media-amazon.com/images/I/51BZdlchEsL.jpg",
     "price": "14.99",
+    "description": "",
     "sale": false,
     "title": "A Dream So Dark"
   },
@@ -68,6 +76,7 @@
     "firebaseKey": "-MiBwAF5wOY00AYJm7cR",
     "image": "https://images-na.ssl-images-amazon.com/images/I/61GSqXVhhKL.jpg",
     "price": "12.00",
+    "description": "",
     "sale": false,
     "title": "The Fire Next Time"
   }

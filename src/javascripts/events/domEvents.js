@@ -9,6 +9,7 @@ import { showBooks } from '../components/books';
 import addAuthorForm from '../components/forms/addAuthorForm';
 import { showAuthors } from '../components/authors';
 import { createAuthor } from '../helpers/data/authorData';
+import viewBook from '../components/viewBook';
 
 const domEvents = () => {
   document.querySelector('#main-container').addEventListener('click', (e) => {
@@ -36,6 +37,7 @@ const domEvents = () => {
         title: document.querySelector('#title').value,
         image: document.querySelector('#image').value,
         price: document.querySelector('#price').value,
+        description: document.querySelector('#description').value,
         sale: document.querySelector('#sale').checked,
         author_id: document.querySelector('#author_id').value
       };
@@ -58,12 +60,19 @@ const domEvents = () => {
         title: document.querySelector('#title').value,
         image: document.querySelector('#image').value,
         price: document.querySelector('#price').value,
+        description: document.querySelector('#description').value,
         sale: document.querySelector('#sale').checked,
         author_id: document.querySelector('#author_id').value,
         firebaseKey
       };
 
       updateBook(bookObject).then(showBooks);
+    }
+
+    if (e.target.id.includes('view-book-btn')) {
+      const [, firebaseKey] = e.target.id.split('--');
+
+      getSingleBook(firebaseKey).then(viewBook);
     }
 
     // ADD CLICK EVENT FOR DELETING AN AUTHOR
