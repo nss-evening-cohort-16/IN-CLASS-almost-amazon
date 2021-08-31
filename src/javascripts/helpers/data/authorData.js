@@ -31,6 +31,17 @@ const getSingleAuthor = (firebaseKey) => new Promise((resolve, reject) => {
 });
 
 // UPDATE AUTHOR
+const deleteSingleAuthor = (firebaseKey) => new Promise((resolve, reject) => {
+  axios.delete(`${dbUrl}/authors/${firebaseKey}.json`)
+    .then(() => {
+      getAuthors().then(resolve);
+    }).catch(reject);
+});
 // SEARCH AUTHORS
 
-export { getAuthors, createAuthor, getSingleAuthor };
+export {
+  getAuthors,
+  createAuthor,
+  getSingleAuthor,
+  deleteSingleAuthor
+};

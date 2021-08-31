@@ -11,11 +11,10 @@ import { getSingleBook } from './bookData';
 //     }).catch(reject);
 // });
 
-const viewBookDetails = (bookFirebasekey) => (async () => {
+const viewBookDetails = async (bookFirebasekey) => {
   const book = await getSingleBook(bookFirebasekey);
   const authorObject = await getSingleAuthor(book.author_id);
-
   return { authorObject, ...book };
-})().catch(console.warn);
+};
 
 export default viewBookDetails;
