@@ -24,7 +24,13 @@ const createAuthor = (authorObject) => new Promise((resolve, reject) => {
     }).catch((error) => reject(error));
 });
 
+const getSingleAuthor = (firebaseKey) => new Promise((resolve, reject) => {
+  axios.get(`${dbUrl}/authors/${firebaseKey}.json`)
+    .then((response) => resolve(response.data))
+    .catch(reject);
+});
+
 // UPDATE AUTHOR
 // SEARCH AUTHORS
 
-export { getAuthors, createAuthor };
+export { getAuthors, createAuthor, getSingleAuthor };
