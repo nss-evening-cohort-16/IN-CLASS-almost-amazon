@@ -38,10 +38,16 @@ const deleteSingleAuthor = (firebaseKey) => new Promise((resolve, reject) => {
     }).catch(reject);
 });
 // SEARCH AUTHORS
+const getAuthorBooks = (authorId) => new Promise((resolve, reject) => {
+  axios.get(`${dbUrl}/books.json?orderBy="author_id"&equalTo="${authorId}"`)
+    .then((response) => resolve(Object.values(response.data)))
+    .catch(reject);
+});
 
 export {
   getAuthors,
   createAuthor,
   getSingleAuthor,
-  deleteSingleAuthor
+  deleteSingleAuthor,
+  getAuthorBooks
 };

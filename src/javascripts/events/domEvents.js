@@ -8,9 +8,9 @@ import {
 import { showBooks } from '../components/books';
 import addAuthorForm from '../components/forms/addAuthorForm';
 import { showAuthors } from '../components/authors';
-import { createAuthor, deleteSingleAuthor } from '../helpers/data/authorData';
+import { createAuthor } from '../helpers/data/authorData';
 import viewBook from '../components/viewBook';
-import viewBookDetails from '../helpers/data/mergedData';
+import { viewBookDetails, deleteAuthorBooks } from '../helpers/data/mergedData';
 
 const domEvents = () => {
   document.querySelector('#main-container').addEventListener('click', (e) => {
@@ -81,7 +81,7 @@ const domEvents = () => {
       // eslint-disable-next-line no-alert
       if (window.confirm('Want to delete?')) {
         const [, firebaseKey] = e.target.id.split('--');
-        deleteSingleAuthor(firebaseKey).then(showAuthors);
+        deleteAuthorBooks(firebaseKey).then(showAuthors);
       }
     }
 
